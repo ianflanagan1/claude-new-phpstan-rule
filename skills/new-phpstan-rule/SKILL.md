@@ -55,11 +55,11 @@ In the package directory: `git add -A`, commit as `Add <Pascal>Rule` with a shor
 Only if the user asked to publish. Otherwise stop here and offer it.
 
 ```sh
-~/.claude/skills/github-publish/scripts/github-publish.sh <dir> public phpstan-<name>
-~/.claude/skills/packagist-publish/scripts/packagist-publish.sh <dir>
+~/projects/cli/repo-tools/.venv/bin/github publish <dir> phpstan-<name>
+~/projects/cli/repo-tools/.venv/bin/packagist publish <dir>
 ```
 
-If a script reports missing credentials, point the user to the publish-skills README's setup steps; never try to log in or read tokens yourself.
+Each step is skipped when already done, so after a failure fix the cause and run the command again. If a command isn't found or reports missing credentials, point the user to the setup steps in `~/projects/cli/repo-tools/README.md`; never try to log in or read tokens yourself.
 
 ## 9. Use it
 

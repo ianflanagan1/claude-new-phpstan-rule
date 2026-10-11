@@ -16,7 +16,7 @@ A convention that's only written down gets broken; a PHPStan rule enforces it in
 4. Writes behaviour-named `RuleTestCase` tests with one fixture each and sees them fail.
 5. Writes the rule, then runs `scripts/check.sh` until everything passes, plus a mutation check.
 6. Commits and tags `v0.1.0`.
-7. If you asked, publishes with [publish-skills](https://github.com/ianflanagan1/publish-skills).
+7. If you asked, publishes with the `github` and `packagist` commands from repo-tools, in `~/projects/cli/repo-tools`.
 8. Offers to require the package in the project that needed it.
 
 Each package is created in `~/projects/phpstan-rules/<name>/` as an independent git repo. Set `PHPSTAN_RULES_DIR` to use another directory.
@@ -37,7 +37,7 @@ Each package is created in `~/projects/phpstan-rules/<name>/` as an independent 
    ln -s ~/projects/claude/new-phpstan-rule/skills/new-phpstan-rule ~/.claude/skills/new-phpstan-rule
    ```
 
-3. To publish, set up [publish-skills](https://github.com/ianflanagan1/publish-skills) by following its README: the GitHub token, the Packagist token and the skill links.
+3. To publish, set up repo-tools by following its README: the commands on your PATH, the GitHub token and the Packagist tokens.
 4. Optionally allow the scripts in `~/.claude/settings.json`:
 
    ```json
