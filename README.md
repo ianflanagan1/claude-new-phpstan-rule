@@ -34,7 +34,7 @@ Each package is created in `~/projects/phpstan-rules/<name>/` as an independent 
 2. Link the skill into Claude Code:
 
    ```sh
-   ln -s ~/projects/skills/new-phpstan-rule/skills/new-phpstan-rule ~/.claude/skills/new-phpstan-rule
+   ln -s ~/projects/claude/new-phpstan-rule/skills/new-phpstan-rule ~/.claude/skills/new-phpstan-rule
    ```
 
 3. To publish, set up [publish-skills](https://github.com/ianflanagan1/publish-skills) by following its README: the GitHub token, the Packagist token and the skill links.
