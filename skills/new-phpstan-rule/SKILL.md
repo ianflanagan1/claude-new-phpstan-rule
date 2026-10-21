@@ -2,6 +2,7 @@
 name: new-phpstan-rule
 description: Create a new custom PHPStan rule as its own Composer package (ianflanagan1/phpstan-<name>), test-first, and optionally publish it to GitHub and Packagist. Use when the user wants a PHPStan rule that enforces a convention, especially one to reuse across projects.
 argument-hint: <what the rule should report>
+allowed-tools: Bash(command -v github packagist), Bash(github publish:*), Bash(packagist publish:*)
 ---
 
 # New PHPStan rule
@@ -54,12 +55,14 @@ In the package directory: `git add -A`, commit as `Add <Pascal>Rule` with a shor
 
 Only if the user asked to publish. Otherwise stop here and offer it.
 
+First check both commands are on the PATH with `command -v github packagist`. If either is missing, stop and point the user to the setup in [repo-tools' README](https://github.com/ianflanagan1/repo-tools#setup); don't look for them elsewhere.
+
 ```sh
-~/projects/cli/repo-tools/.venv/bin/github publish <dir> phpstan-<name>
-~/projects/cli/repo-tools/.venv/bin/packagist publish <dir>
+github publish <dir> phpstan-<name>
+packagist publish <dir>
 ```
 
-Each step is skipped when already done, so after a failure fix the cause and run the command again. If a command isn't found or reports missing credentials, point the user to the setup steps in `~/projects/cli/repo-tools/README.md`; never try to log in or read tokens yourself.
+Each step is skipped when already done, so after a failure fix the cause and run the command again. If a command reports missing credentials, point the user to the same README; never try to log in or read tokens yourself.
 
 ## 9. Use it
 
